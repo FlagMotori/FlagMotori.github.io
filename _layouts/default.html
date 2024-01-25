@@ -11,37 +11,28 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <![endif]-->
   </head>
   <body>
     <div class="wrapper">
       <header>
-        <!--
-          <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
-        -->
         <p class="center">
         {% if site.logo %}
-          <img class="logo" src="{{site.logo | relative_url}}" alt="r3kapig" style="cursor:pointer;" onclick="location.replace('/')" />
+          <img class="logo" src="{{site.logo | relative_url}}" alt="FlagMotori" style="cursor:pointer;" onclick="location.replace('/')" />
         {% endif %}
         </p>
         <p class="center">{{ site.description | default: site.github.project_tagline }}</p>
 
         {% if site.show_downloads %}
-        <ul class="other site">
-          <li>&#128681; <a href="https://ctftime.org/team/58979" class="btn">CTFTime</a></li>
-          <li>&#128218; <a href="/writeup/" class="btn">Writeup</a></li>
+        <ul class=" ">
+          <li>&#128681; <a href="https://ctftime.org/team/222060" class="btn">CTFTime</a></li>
           {% if page.id == 'index' %}
-          <li>&#128373; <a href="#team-members" class="btn">Members</a></li>
-          <li>&#127942; <a href="#selected-awards" class="btn">Selected Awards</a></li>
+          <li>&#128373; <a href="#team-members" class="btn">&nbsp;Members</a></li>
           {% else' %}
           <li>&#128373; <a href="/#team-members" class="btn">Members</a></li>
-          <li>&#127942; <a href="/#selected-awards" class="btn">Selected Awards</a></li>
           {% endif %}
-          <li>&#128373; <a href="/r3kapig-skill-tree-v1.0">r3kapig skill tree</a></li>
-          <li>&#128008; <a href="https://github.com/r3kapig">GitHub</a></li>
-          <li>&#128038; <a href="https://twitter.com/r3kapig" class="btn">Twitter</a>
+          <li>&#128008; <a href="https://github.com/FlagMotori">GitHub</a></li>
+          <li>&#128221; <a href="https://flagmotori.github.io/writeups">Writeups</a></li>
+          <!-- <li>&#128197; <a href="/#upcoming-events">CTFtime Upcomings</a></li> -->
         </ul>
         {% endif %}
       </header>

@@ -17,7 +17,7 @@
 }
 
 body {
-  background-color: #fff;
+  background-color: #ffffff;
   padding:50px;
   font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color:#727272;
@@ -117,7 +117,8 @@ th {
 }
 
 img {
-  max-width:100%;
+  max-width:80%;
+  border-radius: 10%;
 }
 
 header {

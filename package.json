@@ -1,7 +1,7 @@
 {
-  "name": "r3kapig.github.io",
+  "name": "FlagMotori.github.io",
   "version": "1.0.0",
-  "description": "r3kapig is a united CTF Team mostly emerging from Eur3kA and FlappyPig since 2018. Our self-intro is that r3kapig is a delicious dish that can be grilled and fried, and the mission of the team is to provide the most delicious food for the host.",
+  "description": "FlagMotori iranian CTF team",
   "main": "index.js",
   "scripts": {
     "build": "rollup -c rollup.config.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/r3kapig/r3kapig.github.io.git"
+    "url": "git+https://github.com/FlagMotori/FlagMotori.github.io.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/r3kapig/r3kapig.github.io/issues"
+    "url": "https://github.com/FlagMotori/FlagMotori.github.io/issues"
   },
-  "homepage": "https://github.com/r3kapig/r3kapig.github.io#readme",
+  "homepage": "https://github.com/FlagMotori/FlagMotori.github.io#readme",
   "browserslist": "> 0.25%, not dead",
   "devDependencies": {
     "rollup": "^2.63.0",

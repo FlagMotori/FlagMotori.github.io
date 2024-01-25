@@ -1,8 +1,7 @@
-title: r3kapig
+title: FlagMotori
 logo: /assets/img/logo.png
-description: United Team of Eur3kA and FlappyPig
+description: FlagMotori Iranian CTF Team
 show_downloads: true
 google_analytics:
-# theme: r3kapig # use in local, don't commit this file
-remote_theme: r3kapig/r3kapig.github.io # for remote
+remote_theme: 
 exclude: ['_site', 'node_modules', 'script', 'LICENSE', 'README.md']
