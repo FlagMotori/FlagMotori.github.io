@@ -24,7 +24,7 @@ Happy hacking! 🏴‍☠️💻"
 | <img src="assets/profile/nim0x2a.jpg" class="profile-image" alt="profile-image"  /> | **nim0x2a**<br /> |
 | <img src="assets/profile/amirhosseinzibaei.jpg" class="profile-image" alt="profile-image"  /> | **amirhosseinzibaei**<br /> |
 | <img src="assets/profile/onlyenz404.jpg" class="profile-image" alt="profile-image"  /> | **onlyenz404**<br /> |
-| <img src="assets/profile/high0101.jpg" class="profile-image" alt="profile-image"  /> | **HIGH0101**<br /> |
+| <img src="assets/profile/high0101.jpg" class="profile-image" alt="profile-image"  /> | **HIGHer**<br /> |
 | <img src="assets/profile/safasafari.jpg" class="profile-image" alt="profile-image"  /> | **SafaSafari**<br /> |
 
 <br>
