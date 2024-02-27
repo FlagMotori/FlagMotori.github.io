@@ -23,7 +23,7 @@ for user in users:
     user_data = get_github_user_profile(users[user])
     abouts[user] = {}
     profile_image_data = requests.get(user_data['profile_image_url']).content
-    with open(f'{user}.jpg', 'wb') as cf:
+    with open(f'assets/profile/{user}.jpg', 'wb') as cf:
         cf.write(profile_image_data)
 
     del user_data['profile_image_url']
