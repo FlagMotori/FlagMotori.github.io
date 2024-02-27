@@ -1,8 +1,8 @@
 import requests
 import json
 
-def get_github_user_profile(username):
-    base_url = f"https://api.github.com/users/{username}"
+def get_github_user_profile(userid):
+    base_url = f"https://api.github.com/user/{userid}"
     
     response = requests.get(base_url)
     data = {}
@@ -15,22 +15,23 @@ def get_github_user_profile(username):
     else:
         return None
 
-with open('assets/users', 'r') as rf:
-    usernames = rf.read()
-usernames = usernames.splitlines()
+with open('assets/users.json', 'r') as rf:
+    users = json.load(rf)
 
 abouts = {}
-for username in usernames:
-    user_data = get_github_user_profile(username)
-    abouts[username] = {}
+for user in users:
+    user_data = get_github_user_profile(users[user])
+    abouts[user] = {}
     profile_image_data = requests.get(user_data['profile_image_url']).content
-    with open(f'assets/profile/{username}.jpg', 'wb') as cf:
+    with open(f'{user}.jpg', 'wb') as cf:
         cf.write(profile_image_data)
 
     del user_data['profile_image_url']
     for key in user_data:
         value = user_data[key]
-        abouts[username][key] = value
+        abouts[user][key] = value
 
-with open('assets/profile/abouts.json', 'w') as cf:
-    cf.write(json.dumps(abouts))
+with open('assets/profile/abouts.json', 'w', encoding='utf-8') as cf:
+    json_data = json.dumps(abouts, ensure_ascii=False)
+    cleaned_data = json_data.replace('\r\n', ' ').replace('\r', '').replace('\n', '')
+    cf.write(cleaned_data)
