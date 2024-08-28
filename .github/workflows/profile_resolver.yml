@@ -24,10 +24,10 @@ jobs:
           python -m pip install requests
           python py-scripts/profile_resolver.py
 
-      - name: Commit and push results
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add .
-          git commit -m "Profile Update"
-          git push origin master
+      # https://github.com/stefanzweifel/git-auto-commit-action
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Profile Update"
+          commit_options: '--no-verify --signoff'
+          commit_user_name: "GitHub Action"
+          commit_user_email: "actions@github.com"
