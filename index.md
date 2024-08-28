@@ -19,7 +19,6 @@ Happy hacking! 🏴‍☠️💻"
 | | |
 | :----------------------------------------------------: | :---------------------------------------------------------- |
 | <img src="assets/profile/mheidari98.jpg" class="profile-image" alt="profile-image"  /> | **mheidari98**<br /> <span id='mheidari98'></span> |
-| <img src="assets/profile/parrot409.jpg" class="profile-image" alt="profile-image"  /> | **parrot409**<br /> <span id='parrot409'></span> |
 | <img src="assets/profile/0xashkan.jpg" class="profile-image" alt="profile-image"  /> | **Ashkinus**<br /> <span id='0xashkan'></span> |
 | <img src="assets/profile/nim0x2a.jpg" class="profile-image" alt="profile-image"  /> | **nim0x2a**<br /> <span id='nim0x2a'></span> |
 | <img src="assets/profile/amirhossein303.jpg" class="profile-image" alt="profile-image"  /> | **amirhossein303**<br /> <span id='amirhossein303'></span> |
@@ -29,6 +28,8 @@ Happy hacking! 🏴‍☠️💻"
 | <img src="assets/profile/houramor.jpg" class="profile-image" alt="profile-image"  /> | **hsm**<br /> <span id='houramor'></span> |
 | <img src="assets/profile/jafarakhoundali.jpg" class="profile-image" alt="profile-image"  /> | **Jafar Akhoundali**<br /> <span id='jafarakhoundali'></span> |
 | <img src="assets/profile/mhmd.jpg" class="profile-image" alt="profile-image"  /> | **mhmd**<br /> <span id='mhmd'></span> |
+| <img src="assets/profile/MohamadAli.jpg" class="profile-image" alt="profile-image"  /> | **MohamadAli**<br /> <span id='MohamadAli'></span> |
+| <img src="assets/profile/inalov.jpg" class="profile-image" alt="profile-image"  /> | **inalov**<br /> <span id='inalov'></span> |
 
 <br>
 
