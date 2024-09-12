@@ -30,6 +30,7 @@ Happy hacking! 🏴‍☠️💻"
 | <img src="assets/profile/mhmd.jpg" class="profile-image" alt="profile-image"  /> | **mhmd**<br /> <span id='mhmd'></span> |
 | <img src="assets/profile/MohamadAli.jpg" class="profile-image" alt="profile-image"  /> | **MohamadAli**<br /> <span id='MohamadAli'></span> |
 | <img src="assets/profile/inalov.jpg" class="profile-image" alt="profile-image"  /> | **inalov**<br /> <span id='inalov'></span> |
+| <img src="assets/profile/AliGhaffarian.jpg" class="profile-image" alt="profile-image"  /> | **AliGhaffarian**<br /> <span id='AliGhaffarian'></span> |
 
 <br>
 
