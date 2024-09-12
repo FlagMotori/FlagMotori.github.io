@@ -1,9 +1,11 @@
 name: Run profile resolver script
 
 on:
+  push:
+    branches:
+      - master
   schedule:
     - cron: "* */24 * * *"
-
   workflow_dispatch:
 
 jobs:
