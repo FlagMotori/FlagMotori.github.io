@@ -1,6 +1,5 @@
 _site
 .sass-cache
-*.lock
-node_modules
+vendor
 .jekyll-cache
 .DS_Store

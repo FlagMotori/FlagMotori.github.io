@@ -207,3 +207,30 @@
 .highlight {
   background-color: #f8f8f8;
 }
+
+/* Dark theme syntax colours (GitHub dark palette). Light values above are the
+   default; these only apply when data-theme="dark" is set on <html>. */
+[data-theme="dark"] {
+  .highlight {
+    background-color: var(--code-bg);
+    color: var(--code-text);
+  }
+  .highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs, .highlight .cp { color: #8b949e; }
+  .highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv, .highlight .kt { color: #ff7b72; }
+  .highlight .o, .highlight .ow { color: var(--code-text); }
+  .highlight .nt { color: #7ee787; }
+  .highlight .na { color: #79c0ff; }
+  .highlight .nb, .highlight .bp { color: #79c0ff; }
+  .highlight .nc, .highlight .nn, .highlight .no, .highlight .nd, .highlight .ne, .highlight .nf, .highlight .nl, .highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi { color: #d2a8ff; }
+  .highlight .ni { color: #ffa657; }
+  .highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .s1 { color: #a5d6ff; }
+  .highlight .sr, .highlight .ss { color: #7ee787; }
+  .highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .mo, .highlight .mb, .highlight .mx, .highlight .il { color: #79c0ff; }
+  .highlight .err { color: #f85149; background-color: transparent; }
+  .highlight .gh, .highlight .gu { color: #79c0ff; }
+  .highlight .gd { color: #ffdcd7; background-color: #67060c; }
+  .highlight .gi { color: #aff5b4; background-color: #033a16; }
+  .highlight .gr, .highlight .gt { color: #ffa198; }
+  .highlight .go, .highlight .gp { color: #8b949e; }
+  .highlight .w { color: #6e7681; }
+}

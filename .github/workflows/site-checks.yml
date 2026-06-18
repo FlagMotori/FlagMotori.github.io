@@ -1,0 +1,64 @@
+name: Site checks
+
+# Builds the Jekyll site and lints the generated HTML on every push / PR.
+# - html-proofer: broken internal links, missing images, bad references (blocking)
+# - w3c_validators: W3C HTML validation via tools/w3c_validate.rb (informational)
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  site-checks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true # bundle install + cache gems
+
+      - name: Build site
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      - name: Lint HTML (html-proofer)
+        run: |
+          bundle exec htmlproofer ./_site \
+            --disable-external \
+            --allow-hash-href
+
+      - name: Validate HTML (W3C)
+        run: bundle exec ruby tools/w3c_validate.rb _site/index.html _site/404.html
+        continue-on-error: true # W3C public API is rate-limited; report only
+
+  # Compiles the SCSS with LibSass (sassc) — the engine the LIVE classic GitHub
+  # Pages build uses (jekyll-sass-converter 1.5.2). The repo's jekyll 4.x job
+  # above uses Dart sass, which silently accepts Dart-only features (e.g. @use)
+  # that LibSass drops -> unstyled live site. This catches that regression
+  # without the heavyweight github-pages gem. See .github/pages/libsass_check.rb.
+  libsass-css-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+
+      - name: Install sassc (LibSass)
+        run: gem install sassc -v '~> 2.4'
+
+      - name: Compile SCSS under LibSass
+        run: ruby .github/pages/libsass_check.rb

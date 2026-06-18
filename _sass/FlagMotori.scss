@@ -1,7 +1,94 @@
 @import "fonts";
 @import "rouge-github";
 
+/* ---------------------------------------------------------------------------
+   Theme variables
+   Light is the default. `data-theme="dark"` on <html> swaps the palette.
+   The data-theme attribute is set before first paint by an inline script in
+   the layout head (cookie -> system preference), so there is no flash.
+--------------------------------------------------------------------------- */
+:root {
+  --bg:            #ffffff;
+  --text:          #727272;
+  --heading:       #222222;
+  --heading-sub:   #494949;
+  --accent:        #fc0000;
+  --link:          #267cb9;
+  --link-hover:    #006699;
+  --muted:         #777777;
+  --strong:        #222222;
+  --border:        #e5e5e5;
+  --code-bg:       #f8f8f8;
+  --code-text:     #333333;
+  --panel-bg:      #f4f4f4;
+  --panel-border:  #e0e0e0;
+  color-scheme: light;
+}
 
+[data-theme="dark"] {
+  --bg:            #0d1117;
+  --text:          #adbac7;
+  --heading:       #e6edf3;
+  --heading-sub:   #b1bac4;
+  --accent:        #ff5c5c;
+  --link:          #58a6ff;
+  --link-hover:    #79c0ff;
+  --muted:         #8b949e;
+  --strong:        #e6edf3;
+  --border:        #30363d;
+  --code-bg:       #161b22;
+  --code-text:     #c9d1d9;
+  --panel-bg:      #161b22;
+  --panel-border:  #30363d;
+  color-scheme: dark;
+}
+
+/* ---------------------------------------------------------------------------
+   Theme toggle button
+--------------------------------------------------------------------------- */
+.theme-toggle {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 1000;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--panel-border);
+  border-radius: 50%;
+  background: var(--panel-bg);
+  color: var(--heading);
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color .2s ease, border-color .2s ease, transform .15s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.08);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.theme-toggle .icon-sun  { display: none; }
+.theme-toggle .icon-moon { display: block; }
+[data-theme="dark"] .theme-toggle .icon-sun  { display: block; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+/* ---------------------------------------------------------------------------
+   Base
+--------------------------------------------------------------------------- */
 .center {
    text-align: center;
 }
@@ -17,15 +104,16 @@
 }
 
 body {
-  background-color: #ffffff;
+  background-color: var(--bg);
   padding:50px;
   font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color:#727272;
+  color: var(--text);
   font-weight:400;
+  transition: background-color .3s ease, color .3s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color:#222;
+  color: var(--heading);
   margin:0 0 20px;
 }
 
@@ -42,33 +130,33 @@ h1 {
 }
 
 h2 {
-  color:#fc0000;
+  color: var(--accent);
   margin:-10px auto;
 }
 
 h3, h4, h5, h6 {
-  color:#494949;
+  color: var(--heading-sub);
 }
 
 a {
-  color:#267CB9;
+  color: var(--link);
   text-decoration:none;
 }
 
 a:hover, a:focus {
-  color:#069;
+  color: var(--link-hover);
   font-weight: bold;
 }
 
 a small {
   font-size:11px;
-  color:#777;
+  color: var(--muted);
   margin-top:-0.3em;
   display:block;
 }
 
 a:hover small {
-  color:#777;
+  color: var(--muted);
 }
 
 .wrapper {
@@ -77,7 +165,7 @@ a:hover small {
 }
 
 blockquote {
-  border-left:1px solid #e5e5e5;
+  border-left:1px solid var(--border);
   margin:0;
   padding:0 0 0 20px;
   font-style:italic;
@@ -85,14 +173,14 @@ blockquote {
 
 code, pre {
   font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
-  color:#333;
+  color: var(--code-text);
 }
 
 pre {
   padding:8px 15px;
-  background: #f8f8f8;
+  background: var(--code-bg);
   border-radius:5px;
-  border:1px solid #e5e5e5;
+  border:1px solid var(--border);
   overflow-x: auto;
 }
 
@@ -104,16 +192,16 @@ table {
 th, td {
   text-align:left;
   padding:5px 10px;
-  border-bottom:1px solid #e5e5e5;
+  border-bottom:1px solid var(--border);
 }
 
 dt {
-  color:#444;
+  color: var(--strong);
   font-weight:700;
 }
 
 th {
-  color:#444;
+  color: var(--strong);
 }
 
 img {
@@ -132,16 +220,16 @@ ul.downloads {
   list-style:none;
   height:40px;
   padding:0;
-  background: #f4f4f4;
+  background: var(--panel-bg);
   border-radius:5px;
-  border:1px solid #e0e0e0;
+  border:1px solid var(--panel-border);
   width:270px;
 }
 
 .downloads li {
   width:89px;
   float:left;
-  border-right:1px solid #e0e0e0;
+  border-right:1px solid var(--panel-border);
   height:40px;
 }
 
@@ -156,7 +244,7 @@ ul.downloads {
 .downloads a {
   line-height:1;
   font-size:11px;
-  color:#676767;
+  color: var(--text);
   display:block;
   text-align:center;
   padding-top:6px;
@@ -164,16 +252,12 @@ ul.downloads {
 }
 
 .downloads a:hover, .downloads a:focus {
-  color:#675C5C;
+  color: var(--heading-sub);
   font-weight:bold;
 }
 
-.downloads ul a:active {
-  background-color:#f0f0f0;
-}
-
 strong {
-  color:#222;
+  color: var(--strong);
   font-weight:700;
 }
 
@@ -185,7 +269,7 @@ strong {
 .downloads a strong {
   font-size:14px;
   display:block;
-  color:#222;
+  color: var(--strong);
 }
 
 section {
@@ -200,7 +284,7 @@ small {
 
 hr {
   border:0;
-  background:#e5e5e5;
+  background: var(--border);
   height:1px;
   margin:0 0 20px;
 }
@@ -231,7 +315,7 @@ footer {
   }
 
   section {
-    border:1px solid #e5e5e5;
+    border:1px solid var(--border);
     border-width:1px 0;
     padding:20px 0;
     margin:0 0 20px;
@@ -254,13 +338,13 @@ footer {
       width: 100%;
       max-width:500px;
    }
-   
+
    header {
       margin: auto;
    }
-   
+
    .site{
-      padding: 0;  
+      padding: 0;
    }
 }
 
@@ -285,6 +369,11 @@ footer {
 @media print, screen and (max-width: 480px) {
   body {
     padding:15px;
+  }
+
+  .theme-toggle {
+    top: 10px;
+    right: 10px;
   }
 
   .downloads {

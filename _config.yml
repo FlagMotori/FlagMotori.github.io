@@ -1,7 +1,21 @@
 title: FlagMotori
 logo: /assets/img/logo.png
 description: FlagMotori Iranian CTF Team
+url: "https://fmc.tf"
+author: FlagMotori
+twitter:
+  username: FlagMotori
+
+# jekyll-seo-tag reads the page-level `image` (not a site-level key), so set a
+# site-wide default via front-matter defaults -> emits og:image + twitter:image.
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/logo.png
 show_downloads: true
 google_analytics:
-remote_theme: 
-exclude: ['_site', 'node_modules', 'script', 'LICENSE', 'README.md']
+remote_theme:
+plugins:
+  - jekyll-seo-tag
+exclude: ['_site', 'py-scripts', 'LICENSE', 'README.md', 'tools', 'vendor']
