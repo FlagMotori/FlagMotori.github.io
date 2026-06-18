@@ -217,7 +217,7 @@
   }
   .highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs, .highlight .cp { color: #8b949e; }
   .highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv, .highlight .kt { color: #ff7b72; }
-  .highlight .o, .highlight .ow { color: #c9d1d9; }
+  .highlight .o, .highlight .ow { color: var(--code-text); }
   .highlight .nt { color: #7ee787; }
   .highlight .na { color: #79c0ff; }
   .highlight .nb, .highlight .bp { color: #79c0ff; }

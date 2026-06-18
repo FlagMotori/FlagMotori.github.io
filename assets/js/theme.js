@@ -19,8 +19,9 @@
     });
   }
 
-  /* Sync aria-pressed and meta to the pre-paint theme (no cookie written). */
-  apply(root.getAttribute('data-theme') || 'light');
+  /* The pre-paint script already set data-theme + meta; only the toggle
+     button's aria-pressed needs syncing to the resolved theme. */
+  if (btn) btn.setAttribute('aria-pressed', root.getAttribute('data-theme') === 'dark' ? 'true' : 'false');
 
   /* Follow OS theme changes only while the user hasn't chosen explicitly. */
   if (window.matchMedia) {
