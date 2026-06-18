@@ -1,0 +1,15 @@
+<script>
+  /* Set the theme before first paint to avoid a flash of the wrong colours.
+     Priority: saved cookie -> system preference -> light. Shared by the main
+     layout and the standalone 404 page. */
+  (function () {
+    try {
+      var m = document.cookie.match(/(?:^|;\s*)theme=(dark|light)/);
+      var theme = m ? m[1]
+        : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', theme === 'dark' ? '#0d1117' : '#ffffff');
+    } catch (e) {}
+  })();
+</script>

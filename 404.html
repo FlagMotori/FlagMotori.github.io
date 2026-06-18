@@ -6,7 +6,6 @@ permalink: /404.html
 <head>
   <meta charset="utf-8">
   <title>Error | {{site.title}}</title>
-    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo.png">
@@ -15,6 +14,7 @@ permalink: /404.html
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    {% include theme-head.html %}
     <style type="text/css">
     html,
     body {
@@ -25,11 +25,35 @@ permalink: /404.html
 
     body {
       font-family: Helvetica, Arial, sans-serif;
-      # background-color: #2D72D9;
       color: #333;
       -moz-font-smoothing: antialiased;
       -webkit-font-smoothing: antialiased;
       text-shadow: 1px 1px 10px #fff;
+    }
+
+    /* Dark theme */
+    html[data-theme="dark"] body {
+      background-color: #0d1117;
+      color: #c9d1d9;
+      text-shadow: none;
+    }
+
+    html[data-theme="dark"] .return a {
+      color: #c9d1d9;
+      border-bottom-color: rgba(201, 209, 217, 0.5);
+      text-shadow: none;
+    }
+
+    html[data-theme="dark"] .return a:hover {
+      border-bottom-color: #c9d1d9;
+    }
+
+    html[data-theme="dark"] .return {
+      text-shadow: none;
+    }
+
+    html[data-theme="dark"] .logo-background {
+      opacity: 0.18;
     }
 
     .error-container {
