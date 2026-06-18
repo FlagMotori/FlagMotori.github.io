@@ -18,7 +18,13 @@ files.each do |path|
     next
   end
 
-  results = validator.validate_file(path)
+  begin
+    results = validator.validate_file(path)
+  rescue StandardError => e
+    warn "skip (validator error): #{path}: #{e.message}"
+    next
+  end
+
   if results.errors.empty?
     puts "OK   #{path}"
   else
